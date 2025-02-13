@@ -6,6 +6,8 @@ from pprint import pprint
 def open_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as infile:
         return infile.read()
+def similarity(v1, v2):
+    return np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2))
 
 
 def gpt3_embedding(content, engine='text-similarity-babbage-001'):
